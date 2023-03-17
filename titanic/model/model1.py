@@ -10,9 +10,8 @@ class Net(nn.Module):
         self.num_inputs = inputs
         self.outputs = outputs
         self.linear_relu_stack = nn.Sequential(
-            nn.Linear(inputs, 20),
-            nn.ReLU(),
-            nn.Linear(20, outputs),
+            nn.Linear(inputs, 50),
+            nn.Linear(50, outputs),
             nn.Sigmoid()
         )
         
