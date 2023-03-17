@@ -12,11 +12,7 @@ class Net(nn.Module):
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(inputs, 20),
             nn.ReLU(),
-            nn.Dropout(dropout_prob),
-            nn.Linear(20, 10),
-            nn.ReLU(),
-            nn.Dropout(dropout_prob),
-            nn.Linear(10, outputs),
+            nn.Linear(20, outputs),
             nn.Sigmoid()
         )
         
