@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 
-class Net(nn.Module):
+class RModel(nn.Module):
     def __init__(self, inputs: int, outputs: int,dropout_prob: float) -> None:
         '''
             See the pdf with the diagram to understand the net nomenclature
@@ -11,8 +11,12 @@ class Net(nn.Module):
         self.outputs = outputs
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(inputs, 50),
-            nn.Linear(50, outputs),
-            nn.Sigmoid()
+            nn.ReLU(),
+            nn.Linear(50, 30),
+            nn.ReLU(),
+            nn.Linear(30, 10),
+            nn.ReLU(),
+            nn.Linear(30, 1),
         )
         
 
