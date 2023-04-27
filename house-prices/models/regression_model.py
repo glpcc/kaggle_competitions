@@ -11,11 +11,8 @@ class RModel(nn.Module):
         self.linear_relu_stack = nn.Sequential(
             nn.Linear(inputs, 50),
             nn.ReLU(),
-            nn.Linear(50, 30),
-            nn.ReLU(),
-            nn.Linear(30, 10),
-            nn.ReLU(),
-            nn.Linear(10, 1),
+            nn.Dropout(0.1),
+            nn.Linear(50, 1),
         )
         
 
